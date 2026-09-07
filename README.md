@@ -2,11 +2,11 @@
 
 <p align="center">
   <a href="https://github.com/Slaker19">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=0EA5E9&center=true&vCenter=true&random=false&width=620&lines=T%C3%A9cnico+IT;Entusiasta+del+hardware;Homelab+sobre+Proxmox+VE;Backend+Go+%C2%B7+libvirt%2FKVM;Creador+de+WebKVM" alt="typing" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=0EA5E9&center=true&vCenter=true&random=false&width=620&lines=T%C3%A9cnico+IT;Entusiasta+del+hardware;Homelab+sobre+Proxmox+VE;Backend+Go+%C2%B7+KVM+%2F+Incus;Creador+de+WebKVM" alt="typing" />
   </a>
 </p>
 
-<h3 align="center">Técnico IT · Backend Go · Virtualización (libvirt/KVM) · Homelab sobre Proxmox VE</h3>
+<h3 align="center">Técnico IT · Backend Go · Virtualización (KVM + Incus/LXC) · Homelab sobre Proxmox VE</h3>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3a8a,100:0ea5e9&height=120&section=footer" width="100%" />
 
@@ -17,18 +17,19 @@
 - **Técnico IT** — me dedico a esto y también lo vivo como afición.
 - Entusiasta del hardware: montaje, benchmarks y exprimir cada componente al máximo.
 - Mi laboratorio completo corre sobre **Proxmox VE** (el host donde trabajo a diario): VMs, LXC, passthrough y ZFS.
-- Desarrollo **[WebKVM](https://github.com/Slaker19/webkvm)**: un gestor de máquinas virtuales nativo con interfaz web — un solo binario Go con el frontend embebido.
-- Roadmap: soporte **Docker** en WebKVM aún no está implementado, pero llegará — en el futuro también podrás desplegarlo como contenedor.
+- Desarrollo **[WebKVM](https://github.com/Slaker19/webkvm)**: gestor híbrido nativo de **VMs (KVM)** y **contenedores (Incus/LXC)** con interfaz web — un solo binario Go con el frontend embebido.
+- **Incus** (fork comunitario de LXD) como backend de contenedores: paquetes nativos en todas las distros, cero snap, y compatible con los LXD ya instalados.
+- Docker soportado como alternativa al instalador nativo (imagen publicada, socket del host).
 - Obsesionado con que funcione en todas partes: probado en Ubuntu, Fedora y Arch con instalador one-liner multi-distro.
-- Con ojo en la seguridad: HTTPS nativo con cert autofirmado, CodeQL limpio, CI en verde.
+- Con ojo en la seguridad: HTTPS nativo con cert autofirmado, RBAC, firewall nftables por VM, CodeQL limpio, CI en verde.
 
 ---
 
 ### Proyecto estrella
 
-**[WebKVM](https://github.com/Slaker19/webkvm)** — Gestor de VMs nativo (libvirt + QEMU/KVM) con UI web
+**[WebKVM](https://github.com/Slaker19/webkvm)** — Gestor híbrido nativo: VMs KVM + contenedores Incus/LXC con UI web
 
-![Go](https://img.shields.io/badge/Go-1.25-00ADD8?logo=go&logoColor=white)
+![Go](https://img.shields.io/badge/Go-1.26-00ADD8?logo=go&logoColor=white)
 ![Svelte](https://img.shields.io/badge/Svelte_5-FF3E00?logo=svelte&logoColor=white)
 ![CI](https://img.shields.io/badge/CI-passing-brightgreen)
 ![CodeQL](https://img.shields.io/badge/CodeQL-clean-success)
@@ -38,9 +39,10 @@
 curl -fsSL https://raw.githubusercontent.com/Slaker19/webkvm/main/scripts/install-webkvm.sh | sudo bash
 ```
 
-- Instalador one-liner para Debian/Ubuntu, Fedora/RHEL y Arch
+- Instalador one-liner para Debian/Ubuntu, Fedora/RHEL y Arch (paquetes nativos, cero snap)
 - HTTPS directo del backend (cert autofirmado, SAN IP + dominio) — sin reverse proxy obligatorio
-- Redes NAT + bridge macvlan, snapshots, backups, RBAC y auditoría
+- **Híbrido KVM + Incus/LXC**: vista unificada con badge de tipo, filtro por instancia, creación desde imágenes oficiales con cloud-init, redimensionar disco raíz, interfaces y métricas en vivo
+- Redes NAT + bridge macvlan (los mismos bridges de libvirt para VMs y contenedores), snapshots, backups en streaming, RBAC y auditoría
 - ~14 MB de binario, ~7 MB de RAM en reposo
 
 ---
@@ -55,6 +57,7 @@ curl -fsSL https://raw.githubusercontent.com/Slaker19/webkvm/main/scripts/instal
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![QEMU/KVM](https://img.shields.io/badge/QEMU%2FKVM-FF6600?style=for-the-badge&logo=qemu&logoColor=white)
+![Incus/LXC](https://img.shields.io/badge/Incus%2FLXC-0EA5E9?style=for-the-badge&logo=linux&logoColor=white)
 ![Proxmox](https://img.shields.io/badge/Proxmox_VE-E57000?style=for-the-badge&logo=proxmox&logoColor=white)
 
 </div>
