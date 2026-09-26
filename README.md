@@ -14,40 +14,40 @@
 
 ### Sobre mí
 
-- **Técnico IT** — me dedico a esto y también lo vivo como afición.
-- Entusiasta del hardware: montaje, benchmarks y exprimir cada componente al máximo.
-- Mi laboratorio completo corre sobre **Proxmox VE** (el host donde trabajo a diario): VMs, LXC, passthrough y ZFS.
-- Desarrollo **[WebKVM](https://github.com/Slaker19/webkvm)**: gestor híbrido nativo de **VMs (KVM)** y **contenedores (Incus/LXC)** con interfaz web — un solo binario Go con el frontend embebido.
-- **Incus** (fork comunitario de LXD) como backend de contenedores: paquetes nativos en todas las distros, cero snap, y compatible con los LXD ya instalados.
-- Docker soportado como alternativa al instalador nativo (imagen publicada, socket del host).
-- Obsesionado con que funcione en todas partes: probado en Ubuntu, Fedora y Arch con instalador one-liner multi-distro.
-- Con ojo en la seguridad: HTTPS nativo con cert autofirmado, RBAC, firewall nftables por VM, CodeQL limpio, CI en verde.
+- **Técnico IT** — me dedico a la infraestructura y la administración de sistemas tanto a nivel profesional como por pasión personal.
+- Entusiasta del hardware: montaje, arquitectura, benchmarks y optimización al milímetro.
+- Mi entorno diario corre sobre **Proxmox VE**: hipervisor de producción para virtualización, contenedores LXC, passthrough IOMMU y almacenamiento ZFS/Btrfs.
+- Creador y mantenedor de **[WebKVM](https://github.com/Slaker19/webkvm)**: panel web autoalojado de alto rendimiento para gestionar un host de virtualización Linux, distribuido como un único binario Go con el frontend Svelte embebido.
+- Soporte híbrido nativo: **KVM/QEMU** para máquinas virtuales y **Incus** (el fork comunitario de LXD) para contenedores ligeros con paquetes nativos y cero dependencias de snap.
+- Obsesión por la reproducibilidad: probado en Ubuntu, Fedora y Arch con instalador *one-liner* multidistro, soporte de paquetes deb/rpm, imagen Docker y CLI nativa.
+- Enfoque riguroso en seguridad: HTTPS nativo con certificados autofirmados automáticos (SAN IP/DNS), RBAC granular, autenticación 2FA/TOTP, cortafuegos nftables por VM y suite de CI 100% verificada.
 
 ---
 
 ### Proyecto estrella
 
-**[WebKVM](https://github.com/Slaker19/webkvm)** — Gestor híbrido nativo: VMs KVM + contenedores Incus/LXC con UI web
+**[WebKVM](https://github.com/Slaker19/webkvm)** — Gestor web híbrido y autoalojado: VMs KVM + contenedores Incus/LXC
 
-![Go](https://img.shields.io/badge/Go-1.26-00ADD8?logo=go&logoColor=white)
-![Svelte](https://img.shields.io/badge/Svelte_5-FF3E00?logo=svelte&logoColor=white)
-![CI](https://img.shields.io/badge/CI-passing-brightgreen)
-![CodeQL](https://img.shields.io/badge/CodeQL-clean-success)
-![License](https://img.shields.io/badge/License-AGPLv3%20%2F%20Commercial-blue)
+[![CI](https://github.com/Slaker19/webkvm/actions/workflows/ci.yml/badge.svg)](https://github.com/Slaker19/webkvm/actions/workflows/ci.yml)
+[![Go](https://img.shields.io/badge/Go-1.26-00ADD8?logo=go&logoColor=white)](https://golang.org)
+[![Svelte](https://img.shields.io/badge/Svelte_5-FF3E00?logo=svelte&logoColor=white)](https://svelte.dev)
+[![License](https://img.shields.io/badge/License-AGPLv3-blue.svg)](https://github.com/Slaker19/webkvm/blob/main/LICENSE)
+[![i18n](https://img.shields.io/badge/i18n-es%20%7C%20en%20%7C%20ca-informational)](https://github.com/Slaker19/webkvm)
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Slaker19/webkvm/main/scripts/install-webkvm.sh | sudo bash
 ```
 
-- Instalador one-liner para Debian/Ubuntu, Fedora/RHEL y Arch (paquetes nativos, cero snap)
-- HTTPS directo del backend (cert autofirmado, SAN IP + dominio) — sin reverse proxy obligatorio
-- **Híbrido KVM + Incus/LXC**: vista unificada con badge de tipo, filtro por instancia, creación desde imágenes oficiales con cloud-init, redimensionar disco raíz, interfaces y métricas en vivo
-- Redes NAT + bridge macvlan (los mismos bridges de libvirt para VMs y contenedores), snapshots, backups en streaming, RBAC y auditoría
-- ~14 MB de binario, ~7 MB de RAM en reposo
+- **Arquitectura de binario único**: Backend Go compilado con frontend Svelte 5 incrustado (~14 MB de binario, ~7 MB de RAM en reposo), sin bases de datos externas ni reverse proxy obligatorio.
+- **Gestión híbrida KVM + Incus/LXC**: Ciclo de vida completo de VMs y contenedores, consolas VNC (noVNC) y terminal serie interactiva en el navegador, métricas en tiempo real y cloud-init studio.
+- **Almacenamiento avanzado**: Pools locales y remotos (NFS, SMB) con propósitos dedicados, migración de discos en caliente, importación/exportación de OVA y vzdump.
+- **Passthrough de hardware**: Asignación de GPUs, tarjetas de red y dispositivos USB con validación previa de aislamiento IOMMU/VFIO.
+- **Redes y seguridad**: Puentes Linux unificados, redes NAT/aisladas, firewall nftables por VM, control de accesos RBAC con ACL por recurso, 2FA/TOTP, tokens de API y auditoría estructurada.
+- **Distribución multidistro**: Instalador idempotente con rollback automático para Debian/Ubuntu, Fedora/RHEL y Arch, contenedor Docker oficial, paquetes `.deb`/`.rpm` y cliente de línea de comandos (`webkvm-cli`).
 
 ---
 
-### Stack
+### Stack técnico
 
 <div>
 
@@ -58,6 +58,7 @@ curl -fsSL https://raw.githubusercontent.com/Slaker19/webkvm/main/scripts/instal
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![QEMU/KVM](https://img.shields.io/badge/QEMU%2FKVM-FF6600?style=for-the-badge&logo=qemu&logoColor=white)
 ![Incus/LXC](https://img.shields.io/badge/Incus%2FLXC-0EA5E9?style=for-the-badge&logo=linux&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Proxmox](https://img.shields.io/badge/Proxmox_VE-E57000?style=for-the-badge&logo=proxmox&logoColor=white)
 
 </div>
@@ -91,4 +92,4 @@ curl -fsSL https://raw.githubusercontent.com/Slaker19/webkvm/main/scripts/instal
 <a href="https://github.com/Slaker19/webkvm"><img src="https://img.shields.io/badge/WebKVM-repo-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
 
 ---
-Si WebKVM te resulta útil, deja una estrella en el repo.
+*Si WebKVM te resulta útil, apoya el proyecto dejando una ⭐ en el [repositorio](https://github.com/Slaker19/webkvm).*
