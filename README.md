@@ -54,6 +54,13 @@ curl -fsSL https://raw.githubusercontent.com/Slaker19/webkvm/main/scripts/instal
 
 ---
 
+### 🎨 Otros Proyectos Destacados
+
+- **[dotfiles-slaker](https://github.com/Slaker19/dotfiles-slaker)** — *Catppuccin Mocha Mauve Hyprland rice*: Configuración reproducible de entorno de escritorio Linux sobre Wayland (Hyprland, Waybar, Kitty, Neovim, Rofi).
+- **[just-calculate](https://github.com/Slaker19/just-calculate)** — Calculadora y utilidad de cálculo rápido desarrollada en Go.
+
+---
+
 ### 🛠️ Stack Técnico & Herramientas
 
 <table>
