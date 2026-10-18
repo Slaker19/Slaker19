@@ -22,7 +22,7 @@
 
 - **Técnico IT**: Dedicado profesional y vocacionalmente a la infraestructura, diagnosis de hardware y administración de sistemas Linux en entornos de producción.
 - **Entusiasta del hardware & bajo nivel**: Montaje, telemetría térmica, tuning de latencia, topología de memoria y passthrough IOMMU/VFIO optimizado al milímetro.
-- **Homelab en producción**: Mi laboratorio y servicios diarios corren 24/7 sobre un nodo **Proxmox VE (Ryzen 7 5700U 8C/16T, 32 GB RAM, almacenamiento híbrido NVMe/SSD/HDD)**, con microsegmentación de red, passthrough PCIe y almacenamiento resiliente.
+- **Homelab en producción**: Mi laboratorio y servicios diarios corren 24/7 sobre un nodo **AOOSTAR WTR PRO** (AMD Ryzen 7 5825U 8C/16T, 32 GB RAM, Dual NVMe en Linux RAID 0, 15W TDP en reposo, Proxmox VE 9.2), con microsegmentación de red sobre dos interfaces Intel I226-V 2.5 GbE y passthrough PCIe.
 - **Creador de [WebKVM](https://github.com/Slaker19/webkvm)**: Plataforma autoalojada y ligera que unifica la gestión de máquinas virtuales (**KVM/QEMU via libvirt**) y contenedores de sistema (**Incus/LXC**) bajo un único binario Go con frontend Svelte 5 embebido.
 
 ---
@@ -32,10 +32,10 @@
 > **Gestor web híbrido autoalojado: VMs KVM/QEMU + Contenedores Incus/LXC**
 
 <p align="left">
-  <a href="https://github.com/Slaker19/webkvm/releases/tag/v0.1.6"><img src="https://img.shields.io/github/v/release/Slaker19/webkvm?style=flat-square&color=10b981&label=Release" alt="Release" /></a>
+  <a href="https://github.com/Slaker19/webkvm/releases/tag/v0.1.8-fix01"><img src="https://img.shields.io/github/v/release/Slaker19/webkvm?style=flat-square&color=10b981&label=Release" alt="Release" /></a>
   <a href="https://github.com/Slaker19/webkvm/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/Slaker19/webkvm/ci.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=CI" alt="CI Status" /></a>
   <a href="https://github.com/Slaker19/webkvm/actions/workflows/codeql.yml"><img src="https://img.shields.io/badge/CodeQL-passing-brightgreen?style=flat-square&logo=github&logoColor=white" alt="CodeQL" /></a>
-  <img src="https://img.shields.io/badge/Go-1.24+-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" />
+  <img src="https://img.shields.io/badge/Go-1.26-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" />
   <img src="https://img.shields.io/badge/Svelte-5-FF3E00?style=flat-square&logo=svelte&logoColor=white" alt="Svelte 5" />
   <img src="https://img.shields.io/badge/License-AGPLv3-blue.svg?style=flat-square" alt="License" />
 </p>
