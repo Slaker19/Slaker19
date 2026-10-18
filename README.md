@@ -134,14 +134,14 @@ curl -fsSL https://raw.githubusercontent.com/Slaker19/webkvm/main/scripts/instal
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
-│                        HOMELAB PROD NODE (PVE 9)                       │
-│      AMD Ryzen 7 5700U (8C/16T @ 15W TDP) · 32 GB DDR4 · NVMe + SSDs   │
+│                   HOMELAB PROD NODE · AOOSTAR WTR PRO                  │
+│   AMD Ryzen 7 5825U (8C/16T @ 15W TDP) · 32 GB DDR4 · Dual NVMe RAID  │
 ├──────────────────────────────────┬─────────────────────────────────────┤
 │   MÁQUINAS VIRTUALES (KVM)       │   SERVICIOS AUTOALOJADOS (LXC)      │
-│  • ubuntu-server (apt CI / apps) │  • AdGuard / Pi-hole (DNS recursivo)│
+│  • ubuntu-server (apt CI / apps) │  • AdGuard Home (DNS recursivo DoH) │
 │  • fedora-webkvm (dnf CI testbed)│  • Nginx Proxy Manager + Cloudflare │
-│  • arch-webkvm (pacman testbed)  │  • Vaultwarden, Immich, Jellyfin    │
-│  • Redes: vmbr0, bridges L2, NAT │  • Beszel, Glances, Prometheus node │
+│  • arch-webkvm (pacman testbed)  │  • Immich, AI Local Stack, Media    │
+│  • Redes: vmbr0, bridges L2, NAT │  • Dual Intel I226-V 2.5 GbE uplink │
 └──────────────────────────────────┴─────────────────────────────────────┘
 ```
 
